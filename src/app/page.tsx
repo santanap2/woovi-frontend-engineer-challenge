@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Link from 'next/link'
-import WooviLogo from './components/WooviLogo'
-import GithubLogo from './components/GithubLogo'
-import LinkedinLogo from './components/LinkedinLogo'
+import WooviLogo from '../components/WooviLogo'
+import GithubLogo from '../components/GithubLogo'
+import LinkedinLogo from '../components/LinkedinLogo'
 
 export default function Home() {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-start p-6 text-slate-700">
+    <main className="w-full h-full flex flex-col items-center justify-start p-6 text-main-text">
       <WooviLogo className="mt-12" />
       <h1 className="text-lg font-bold mt-4">
         Woovi Frontend Engineer Challenge
@@ -36,21 +36,21 @@ export default function Home() {
       <div className="mt-12  w-full flex flex-col items-center justify-center space-y-4">
         <Link
           href="/payment-method"
-          className="bg-[#03D69D] py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
+          className="bg-woovi-green py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
         >
           Payment Method
         </Link>
 
         <Link
           href="/payment-method/pix"
-          className="bg-[#03D69D] py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
+          className="bg-woovi-green py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
         >
           PIX
         </Link>
 
         <Link
           href="/payment-method/credit-card"
-          className="bg-[#03D69D] py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
+          className="bg-woovi-green py-2 w-full rounded-md text-sm text-center font-bold text-white shadow-md"
         >
           Credit Card
         </Link>
