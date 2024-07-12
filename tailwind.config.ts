@@ -19,11 +19,9 @@ const config: Config = {
         'softer-gray': 'rgba(178, 178, 178, 1)',
         'woovi-green': 'rgba(3, 214, 157, 1)',
         'woovi-border': 'rgba(229, 229, 229, 1)',
+        'woovi-blue': 'rgba(19, 58, 111, 1)',
       },
-      fontSize: {
-        '24': '24px',
-        '16': '16px',
-      },
+
       borderRadius: {
         woovi: '10px',
       },

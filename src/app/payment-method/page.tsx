@@ -4,9 +4,9 @@
 import React, { useState } from 'react'
 import WooviLogo from '../../components/WooviLogo'
 import { IPixPortions, pixOptions } from '@/helpers/pixOptions'
-import WooviLogoSmall from '@/components/WooviLogoSmall'
-import SecureBadge from '@/components/SecureBadge'
 import CheckIcon from '@/components/CheckIcon'
+import Link from 'next/link'
+import SecurePayment from '@/components/SecurePayment'
 
 export default function PaymentMethod() {
   const [portionSelected, setPortionSelected] = useState<number>(2)
@@ -14,7 +14,9 @@ export default function PaymentMethod() {
   return (
     <div className="flex flex-col items-center justify- w-full h-full bg-white pl-[15px] pr-5">
       <div className="min-w-full w-full flex justify-center items-center">
-        <WooviLogo className="mt-9 h-full" />
+        <Link href="/">
+          <WooviLogo className="mt-9 h-full" />
+        </Link>
       </div>
 
       <h1 className="mt-10 font-extrabold text-xl text-main-text">
@@ -65,12 +67,17 @@ export default function PaymentMethod() {
         {pixOptions.map((item: IPixPortions, index) => (
           <div
             key={item.portionsNumber}
-            className={`${index === 0 ? 'pt-5 pb-3 px-5 rounded-t-woovi' : 'py-3 px-5'} ${index === 5 && 'rounded-b-woovi border-b-2'} ${portionSelected === item.portionsNumber ? 'border-woovi-green border-b-2' : 'border-woovi-border'} ${portionSelected - 1 === item.portionsNumber && 'border-b-0'} ${portionSelected + 1 === item.portionsNumber && index !== 0 && 'border-t-0'} border-t-2 border-r-2 border-l-2 border-woovi-border`}
+            // by default, items has no vertical border, only horizontal
             // first item has more vertical padding and rounded-top
             // last item has rounded-bottom
             // selected item has green borders
-            // items around the selected one has no top or bottom borders depending on the position
-            // by default, items has no bottom border
+            // items around the selected one has no vertical borders depending on the position
+            className={`border-x-2 border-woovi-border
+              ${index === 0 ? 'pt-5 pb-3 px-5 rounded-t-woovi' : 'py-3 px-5'}
+              ${index === pixOptions.length - 1 ? 'rounded-b-woovi border-b-2' : ''}
+              ${portionSelected === item.portionsNumber ? 'border-woovi-green border-b-2' : 'border-woovi-border'}
+              ${portionSelected - 1 === item.portionsNumber ? 'border-b-0' : ''}
+              ${portionSelected + 1 === item.portionsNumber && index !== 0 ? 'border-t-0' : 'border-t-2'}`}
             onClick={() => setPortionSelected(item.portionsNumber)}
           >
             <div className="text-main-text font-semibold flex justify-between items-end text-lg">
@@ -119,11 +126,7 @@ export default function PaymentMethod() {
         ))}
       </div>
 
-      <div className="text-softer-gray flex space-x-1 text-sm mt-10 pb-7">
-        <SecureBadge />
-        <span>Pagamento 100% seguro via:</span>
-        <WooviLogoSmall />
-      </div>
+      <SecurePayment />
     </div>
   )
 }
