@@ -17,7 +17,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       className={`${nunito.className} toaster group`}
       toastOptions={{
         classNames: {
-          toast: 'bg-white border-2 border-softer-gray',
+          toast: 'bg-white border-2 border-woovi-border shadow-md',
           title:
             'font-semibold text-main-text text-sm flex align-baseline items-end',
         },
