@@ -56,10 +56,15 @@ export default function Home() {
         >
           Credit Card
         </Link>
+
+        <p className="text-sm text-soft-gray text-center">
+          Para retornar para essa página, clique na logo da Woovi no topo da
+          tela.
+        </p>
       </div>
 
       <div className="absolute bottom-6">
-        <span className="text-xs text-slate-400">Julho de 2024</span>
+        <span className="text-xs text-soft-gray">Julho de 2024</span>
       </div>
     </main>
   )

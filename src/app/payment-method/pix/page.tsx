@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import ArrowUpIcon from '@/components/ArrowUpIcon'
-import ClipboardIcon from '@/components/ClipboardIcon'
+import CopyButton from '@/components/CopyButton'
 import SecurePayment from '@/components/SecurePayment'
 import WooviLogo from '@/components/WooviLogo'
 import Link from 'next/link'
@@ -27,13 +27,7 @@ export default function PixPayment() {
         </div>
 
         <div className="mt-5">
-          <button
-            type="button"
-            className="bg-woovi-blue flex items-start space-x-2 px-5 py-[7px] rounded-lg text-white font-semibold text-lg"
-          >
-            <span>Clique para copiar QR CODE </span>
-            <ClipboardIcon />
-          </button>
+          <CopyButton />
         </div>
 
         <div className="mt-5">

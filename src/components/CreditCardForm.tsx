@@ -11,6 +11,7 @@ import {
   cvvMask,
   cpfMask,
 } from '@/helpers/masks'
+import { toast } from 'sonner'
 
 export default function CreditCardForm() {
   const formSchema = z.object({
@@ -58,6 +59,11 @@ export default function CreditCardForm() {
   const cardDateValue = watch('cardDate')
   const cardCvvValue = watch('cardCvv')
 
+  const formSubmit = (data: FormProps) => {
+    console.log(data)
+    toast('Formulário enviado, processando pagamento.')
+  }
+
   useEffect(() => {
     setValue('cpf', cpfMask(cpfValue))
   }, [cpfValue, setValue])
@@ -76,7 +82,7 @@ export default function CreditCardForm() {
 
   return (
     <form
-      onSubmit={handleSubmit((data: FormProps) => console.log(data))}
+      onSubmit={handleSubmit(formSubmit)}
       className="mt-7 w-full text-main-text space-y-7"
     >
       <div className="relative">
@@ -179,15 +185,17 @@ export default function CreditCardForm() {
           {...register('cardPortions')}
           id="cardPortions"
           name="cardPortions"
-          className="rounded-lg border-2 border-woovi-border w-full p-5 text- font-semibold text-lg focus:outline-woovi-green placeholder:text-softer-gray placeholder:text-sm placeholder:font-semibold relative"
+          className="rounded-lg border-2 border-woovi-border bg-white w-full p-5 text- font-semibold text-lg focus:outline-woovi-green placeholder:text-softer-gray placeholder:text-sm placeholder:font-semibold relative"
         >
-          <option value={1}>1x de R$ 15.300,00</option>
+          <option value={1} className="text-xl text-main-text">
+            1x de R$ 15.300,00
+          </option>
         </select>
         <ArrowDownIcon className="absolute top-1/2 right-5" />
 
         <label
           htmlFor="cardPortions"
-          className={`absolute -top-2 left-5 bg-white text-sm font-semibold ${errors.cardName && ' text-red-700'}`}
+          className="absolute -top-2 left-5 bg-white text-sm font-semibold"
         >
           Parcelas
         </label>
