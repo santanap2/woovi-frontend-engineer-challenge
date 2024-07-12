@@ -21,7 +21,7 @@ export default function Home() {
           alt="Pedro Santana"
           className="rounded-full w-48 border-[3px] border-slate-300 shadow-md"
         />
-        <h2 className="font-semibold">Pedro Santana</h2>
+        <h2 className="font-bold">Pedro Santana</h2>
         <div className="flex items-center space-x-4">
           <Link href="http://www.github.com/santanap2" target="_blank">
             <GithubLogo className="w-6 bg-slate-200 rounded-full" />
@@ -57,11 +57,18 @@ export default function Home() {
           Credit Card
         </Link>
 
+      <div className='w-full flex justify-center space-x-4 text-sm text-main-text font-bold'>
+        <Link href="https://woovi.com/jobs/challenges/frontend-engineer/" className='underline'>Desafio
+        </Link>
+        <Link href="https://github.com/santanap2/woovi-frontend-engineer-challenge" className='underline'>Repositório
+        </Link>
+      </div>
         <p className="text-sm text-soft-gray text-center">
           Para retornar para essa página, clique na logo da Woovi no topo da
           tela.
         </p>
       </div>
+
 
       <div className="absolute bottom-6">
         <span className="text-xs text-soft-gray">Julho de 2024</span>
