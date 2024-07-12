@@ -12,7 +12,7 @@ export default function PaymentMethod() {
   const [portionSelected, setPortionSelected] = useState<number>(2)
 
   return (
-    <div className="flex flex-col items-center justify- w-full h-full bg-white pl-[15px] pr-5">
+    <div className="flex flex-col items-center justify- w-full h-full bg-white px-4">
       <div className="min-w-full w-full flex justify-center items-center">
         <Link href="/">
           <WooviLogo className="mt-9 h-full" />

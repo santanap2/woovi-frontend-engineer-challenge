@@ -7,8 +7,10 @@ import LinkedinLogo from '../components/LinkedinLogo'
 
 export default function Home() {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-start p-6 text-main-text">
-      <WooviLogo className="mt-12" />
+    <main className="w-full h-full flex flex-col items-center justify-between px-5 pb-32 text-main-text">
+      <div className="min-w-full w-full flex justify-center items-center">
+        <WooviLogo className="mt-9" />
+      </div>
       <h1 className="text-lg font-bold mt-4">
         Woovi Frontend Engineer Challenge
       </h1>

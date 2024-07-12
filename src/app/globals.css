@@ -9,3 +9,7 @@ body {
 .rectangle {
   background-image: url('/Rectangle.png');
 }
+
+select {
+  appearance: none;
+}
